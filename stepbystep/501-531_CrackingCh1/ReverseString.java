@@ -41,8 +41,9 @@ class ReverseString{
 	public static String doReverse2(String str)
 	{
 		int len = str.length();
-		char[] ch = new char[len];
-		str.getChars(0, str.length(), ch, 0);
+		// char[] ch = new char[len];
+		// str.getChars(0, str.length(), ch, 0);
+		char[] ch = str.toCharArray();
 		for(int i=(len-2) >> 1; i>=0; i--)
 		{
 			char tmp = ch[i];

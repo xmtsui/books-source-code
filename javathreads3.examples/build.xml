@@ -1,0 +1,516 @@
+<project name="Java Threads Examples" default="usage" basedir=".">
+
+    <target name="usage">
+        <echo message="Targets in this ant file are:"/>
+        <echo message="compile: compile all sources"/>
+        <echo message="clean: remove all compiled code"/>
+        <echo message=""/>
+        <echo message="ch2-ex1: Factorial example from chapter 2"/>
+        <echo message="ch2-ex2: Swing Type Tester example from chapter 2"/>
+        <echo message="ch2-ex3: Swing Type Tester example from chapter 2 (adds stop button)"/>
+        <echo message="ch2-ex4: Swing Type Tester example from chapter 2 (stops using interrupt)"/>
+        <echo message="ch2-ex5: Swing Type Tester example from chapter 2 (uses runnable interface)"/>
+        <echo message="ch2-ex6: Swing Type Tester example from chapter 2 (uses runnable and interrupt)"/>
+        <echo message="ch2-ex7: Swing Type Tester example from chapter 2 (animated canvas)"/>
+        <echo message=""/>
+        <echo message="ch3-ex1: Swing Type Tester example from chapter 3 (first score component)"/>
+        <echo message="ch3-ex2: Swing Type Tester example from chapter 3 (uses explicit lock)"/>
+        <echo message="ch3-ex3: Swing Type Tester example from chapter 3 (uses explicit lock with small scope)"/>
+        <echo message="ch3-ex4: Swing Type Tester example from chapter 3 (uses synchronized with small scope)"/>
+        <echo message="ch3-ex5: Swing Type Tester example from chapter 3 (nested lock)"/>
+        <echo message="ch3-ex6: Swing Type Tester example from chapter 3 (deadlocking animation canvas)"/>
+        <echo message="ch3-ex7: Swing Type Tester example from chapter 3 (fixes deadlocking animation canvas)"/>
+        <echo message="ch3-ex8: Swing Type Tester example from chapter 3 (deadlocking score label"/>
+        <echo message="ch3-ex9: Swing Type Tester example from chapter 3 (fixes deadlocking score label"/>
+        <echo message=""/>
+        <echo message="ch4-ex1: Swing Type Tester example from chapter 4 (uses wait/notify)"/>
+        <echo message="ch4-ex2: Swing Type Tester example from chapter 4 (uses wait/notify with synchronized blocks)"/>
+        <echo message="ch4-ex3: Swing Type Tester example from chapter 4 (uses condition variables"/>
+        <echo message=""/>
+        <echo message="ch5-ex1: Swing Type Tester example from chapter 5 (uses Atomic in ScoreLable"/>
+        <echo message="ch5-ex2: Swing Type Tester example from chapter 5 (uses Atomic in animation"/>
+        <echo message="ch5-ex3: Swing Type Tester example from chapter 5 (atomically sets both variables)"/>
+        <echo message="ch5-ex4: Calculator test using ThreadLocal variables"/>
+
+        <echo message=""/>
+        <echo message="ch6-ex1: Testing program for deadlock decting lock"/>
+        <echo message="ch6-ex2: Testing program for alternate deadlock decting lock"/>
+
+        <echo message=""/>
+        <echo message="ch7-ex1: Swing Type Tester example from chapter 7"/>
+        <echo message="ch7-ex2: Swing Type Tester example from chapter 7 (uses InvokeAndWait"/>
+        <echo message="ch7-ex3: Swing Type Tester example from chapter 7 (long-running callback"/>
+
+        <echo message=""/>
+        <echo message="ch8-ex1: Swing Type Tester example from chapter 8"/>
+        <echo message="ch8-ex2: Swing Type Tester example from chapter 8 (uses array lists)"/>
+        <echo message="ch8-ex3: Swing Type Tester example from chapter 8 (uses array lists with synchronized blocks)"/>
+        <echo message="ch8-ex4: Swing Type Tester example from chapter 8 (includes character counter)"/>
+        <echo message="ch8-ex5: Swing Type Tester example from chapter 8 (uses enumerations)"/>
+        <echo message="ch8-ex6: Fibonacci Producer/Consumer from chapter 8"/>
+
+        <echo message=""/>
+        <echo message="ch9-ex1: Fibonacci Thread test from chapter 9"/>
+
+        <echo message=""/>
+        <echo message="ch10-ex1: Fibonacci ThreadPool test from chapter 10"/>
+        <echo message="ch10-ex2: Fibonacci ThreadPool test (uses SingleThreadAccess) from chapter 10"/>
+
+        <echo message=""/>
+        <echo message="ch11-ex1: URL Monitor with timer class from chapter 11"/>
+        <echo message="ch11-ex2: Swing Type tester with timer class from chapter 11"/>
+        <echo message="ch11-ex3: URL Monitor with scheduled executor from chapter 11"/>
+        <echo message="ch11-ex4: URL Monitor with callable from chapter 11"/>
+        <echo message=""/>
+        <echo message="ch12-ex1-server: Type Server from chapter 12"/>
+        <echo message="ch12-ex1-client: Swing Client that uses type server"/>
+        <echo message="ch12-ex2-server: Throttled Type Server from chapter 12 "/>
+        <echo message="ch12-ex2-client: Swing Client that uses type server"/>
+        <echo message="ch12-ex3-server: NIO Type Server from chapter 12 (use client 1 to connect)"/>
+        <echo message="ch12-ex4-server: Calc server from chapter 12 "/>
+        <echo message="ch12-ex4-client: Calc client from chapter 12"/>
+        <echo message="ch12-ex5-client: Interruptilble I/O test from chapter 12 (use any TypeServer)"/>
+
+        <echo message=""/>
+        <echo message="ch13-ex1: UncaughtException handler from chapter 13"/>
+        <echo message=""/>
+        <echo message="ch14-ex1: Collection Test from chapter 14"/>
+        <echo message="ch14-ex2: Atomic Test from chapter 14"/>
+        <echo message="ch14-ex3: Concurrent HashMap Test from chapter 14"/>
+        
+        <echo message=""/>
+        <echo message="ch15-ex1: Table Generator (Single Threaded)"/>
+        <echo message="ch15-ex2: Table Generator (Multi Threaded)"/>
+        <echo message="ch15-ex3: Table Generator (Using loop handler)"/>
+        <echo message="ch15-ex4: Table Generator (Using store-back variables)"/>
+        <echo message="ch15-ex5: Table Generator (Handling reduction variables)"/>
+        <echo message="ch15-ex6: Table Generator (Two-stage reduction)"/>
+        <echo message="ch15-ex7: Table Generator (Handling shared variables)"/>
+        <echo message="ch15-ex8: Table Generator (Threading inner loops)"/>
+        <echo message="ch15-ex9: Table Generator (Printing)"/>
+        <echo message="ch15-scale: Basic Test from tables in chapter 15"/>
+    </target>
+
+    <target name="compile">
+        <javac compiler="javac1.5" source="1.5"
+	    srcdir="." destdir="."/>
+    </target>
+
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+        </delete>
+    </target>
+
+    <!-- Chapter 2 properties -->
+    <property name="FactorialArg" value="10"/>
+
+    <!-- Chapter 5 properties -->
+    <property name="CalcThreadCount" value="10"/>
+
+    <!-- Chapter 6 properties -->
+    <property name="DeadlockTestNumber" value="2"/>
+
+    <!-- Chapter 8 properties -->
+    <property name="nConsumers" value="1"/>
+
+    <!-- Chapter 9 properties -->
+    <property name="nThreads" value="10"/>
+    <property name="FibCalcValue" value="20"/>
+
+    <!-- Chapter 10 properties -->
+    <property name="ThreadPoolSize" value="5"/>
+
+    <!-- Chapter 11 properties -->
+    <property name="hostlist" value="http://www.ora.com/"/>
+
+    <!-- Chapter 12 properties -->
+    <property name="TypeServerHost" value="localhost"/>
+    <property name="TypeServerPort" value="8003"/>
+    <property name="TypeServerNThreads" value="10"/>
+    <property name="CalcServerNThreads" value="5"/>
+    <property name="CalcClientNThreads" value="10"/>
+    <property name="CalcServerFibNumber" value="20"/>
+    <property name="CalcServerHost" value="localhost"/>
+    <property name="CalcServerPort" value="8003"/>
+
+    <!-- Chapter 14 properties -->
+    <!-- also uses nThreads -->
+    <property name="nLoops" value="100000"/>
+
+    <!-- Chapter 15 properties -->
+    <!-- Also uses nThreads -->
+    <property name="scaleLoops" value="200"/>
+    <property name="nRows" value="1500"/>
+    <property name="nCols" value="2000"/>
+    <property name="classname" value="javathreads.examples.ch15.example10.Basic"/>
+
+    <target name="ch2-ex1" depends="compile">
+        <java classpath="." classname="javathreads.examples.ch02.example1.Factorial">
+            <arg value="${FactorialArg}"/>
+        </java>
+    </target>
+
+    <target name="ch2-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch02.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch2-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch02.example3.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch2-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch02.example4.SwingTypeTester">
+        </java>
+    </target>
+
+
+    <target name="ch2-ex5" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch02.example5.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch2-ex6" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch02.example6.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch2-ex7" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch02.example7.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example1.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example3.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example4.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex5" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example5.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex6" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example6.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex7" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example7.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex8" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example8.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch3-ex9" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch03.example9.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch4-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch04.example1.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch4-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch04.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch4-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch04.example3.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch5-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch05.example1.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch5-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch05.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch5-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch05.example3.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch5-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch05.example4.CalculatorTest">
+            <arg value="${CalcThreadCount}"/>
+        </java>
+    </target>
+
+    <target name="ch6-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch06.DeadlockDetectingLock">
+	    <arg value="${DeadlockTestNumber}"/>
+        </java>
+    </target>
+
+    <target name="ch6-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch06.AlternateDeadlockDetectingLock">
+	    <arg value="${DeadlockTestNumber}"/>
+        </java>
+    </target>
+
+    <target name="ch7-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch07.example1.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch7-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch07.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch7-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch07.example3.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch8-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch08.example1.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch8-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch08.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch8-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch08.example3.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch8-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch08.example4.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch8-ex5" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch08.example5.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch8-ex6" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch08.example6.FibonacciTest">
+            <arg value="${nConsumers}"/>
+        </java>
+    </target>
+
+    <target name="ch9-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch09.example1.ThreadTest">
+            <arg value="${nThreads}"/>
+            <arg value="${FibCalcValue}"/>
+        </java>
+    </target>
+
+    <target name="ch10-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch10.example1.ThreadPoolTest">
+            <arg value="${nThreads}"/>
+            <arg value="${FibCalcValue}"/>
+            <arg value="${ThreadPoolSize}"/>
+        </java>
+    </target>
+
+    <target name="ch10-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch10.example2.SingleThreadTest">
+            <arg value="${nThreads}"/>
+            <arg value="${FibCalcValue}"/>
+        </java>
+    </target>
+
+    <target name="ch11-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch11.example1.URLMonitorPanel">
+            <arg value="${hostlist}"/>
+        </java>
+    </target>
+
+    <target name="ch11-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch11.example2.SwingTypeTester">
+        </java>
+    </target>
+
+    <target name="ch11-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch11.example3.URLMonitorPanel">
+            <arg value="${hostlist}"/>
+        </java>
+    </target>
+
+    <target name="ch11-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch11.example4.URLMonitorPanel">
+            <arg value="${hostlist}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex1-server" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch12.example1.TypeServer">
+            <arg value="${TypeServerPort}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex1-client" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch12.example1.SwingTypeTester">
+            <arg value="${TypeServerHost}"/>
+            <arg value="${TypeServerPort}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex2-server" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch12.example2.TypeServer">
+            <arg value="${TypeServerPort}"/>
+            <arg value="${TypeServerNThreads}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex2-client" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch12.example2.SwingTypeTester">
+            <arg value="${TypeServerHost}"/>
+            <arg value="${TypeServerPort}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex3-server" depends="compile">
+        <java fork="no" classpath="." classname="javathreads.examples.ch12.example3.TypeServer">
+            <arg value="${TypeServerPort}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex4-client" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch12.example4.CalcClient">
+            <arg value="${CalcClientNThreads}"/>
+            <arg value="${CalcServerFibNumber}"/>
+            <arg value="${CalcServerHost}"/>
+            <arg value="${CalcServerPort}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex4-server" depends="compile">
+        <java fork="no" classpath="." classname="javathreads.examples.ch12.example4.CalcServer">
+            <arg value="${CalcServerPort}"/>
+            <arg value="${CalcServerNThreads}"/>
+        </java>
+    </target>
+
+    <target name="ch12-ex5-client" depends="compile">
+        <java fork="no" classpath="." classname="javathreads.examples.ch12.example5.InterruptibleClient">
+            <arg value="${TypeServerHost}"/>
+            <arg value="${TypeServerPort}"/>
+        </java>
+    </target>
+
+    <target name="ch13-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch13.TestOverride">
+        </java>
+    </target>
+
+    <target name="ch13-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch13.TestOverrideThread">
+        </java>
+    </target>
+
+    <target name="ch14-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch14.CollectionTest">
+            <arg value="${nLoops}"/>
+        </java>
+    </target>
+
+    <target name="ch14-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch14.AtomicTest">
+            <arg value="${nLoops}"/>
+            <arg value="${nThreads}"/>
+        </java>
+    </target>
+
+    <target name="ch14-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch14.HashTest">
+            <arg value="${nLoops}"/>
+            <arg value="${nThreads}"/>
+        </java>
+    </target>
+
+    <target name="ch14-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch14.CreateTest">
+            <arg value="${nLoops}"/>
+        </java>
+    </target>
+
+    <target name="ch15-ex1" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example1.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex2" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example2.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex3" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example3.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex4" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example4.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex5" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example5.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex6" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example6.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex7" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example7.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex8" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example8.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-ex9" depends="compile">
+        <java fork="yes" classpath="." classname="javathreads.examples.ch15.example9.SinTable">
+        </java>
+    </target>
+
+    <target name="ch15-scale" depends="compile">
+        <java fork="no" classpath="." classname="javathreads.examples.ch15.ScaleTest">
+            <arg value="${scaleLoops}"/>
+            <arg value="${nRows}"/>
+            <arg value="${nCols}"/>
+            <arg value="${nThreads}"/>
+            <arg value="${classname}"/>
+        </java>
+    </target>
+
+</project>

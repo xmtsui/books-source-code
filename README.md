@@ -1,7 +1,5 @@
-java-workspace
-==============
-
-##some book source codes
+example codes in books
+=====
 
 >
  <\<Core Java, Volume I : Fundamentals>>  

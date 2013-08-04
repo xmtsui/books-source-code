@@ -1,9 +1,11 @@
 java-workspace
 ==============
 
-some study materials
+##some book source codes
 
-<\<Mahout in Action>> source code
-<br/>
-<\<Java Threads>> source code
+>
+ <\<Core Java, Volume I : Fundamentals>>  
+ <\<Core Java, Volume II: Advanced Features>>  
+ [<\<Mahout in Action>>](https://github.com/tdunning/MiA)  
+ <\<Java Threads>>
 

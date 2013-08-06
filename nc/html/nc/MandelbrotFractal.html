@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>Mandelbrot Set Fractal Image</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 16-4
+</P>
+
+<P class="NAME" align="center">
+	Mandelbrot Set Fractal Image
+</P>
+
+<P>
+	This applet creates fractal images by plotting the Mandelbrot set derived 
+	from iterating complex functions of the form <EM>z</EM>^2 + <EM>c</EM>, 
+	varying <EM>c</EM> over the complex plane and then computing the 
+	orbit values for <EM>z</EM> = 0 + 0<EM>i</EM>. For each complex point 
+	<EM>c</EM> that is not in the set, the "escape velocity" of 
+	the orbit is represented by a shade of gray -- the more iterations, the 
+	darker the shade.  For each point <EM>c</EM> that is in the set, 
+	its color is determined by the modulus of the final computed orbit value.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>
+		<LI>
+			The initial fractal image is automatically generated.
+		</LI>  
+		<LI>
+			Because the fractal image is recursive, you can use the mouse
+			to drag a rectangle around an area that you want to	zoom into.
+		</LI>
+	</OL>
+</P>
+
+<APPLET
+	code="numbercruncher.program16_4.MandelbrotSetApplet.class"
+	archive="MandelbrotFractal.jar, GraphUtils.jar"
+	align="middle"
+	width="450"
+	height="525"
+	name="MandelbrotSetFractal">
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</BODY>
+</HTML>

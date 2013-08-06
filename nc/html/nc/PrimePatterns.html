@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>Prime Patterns</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 15-5
+</P>
+
+<P class="NAME" align="center">
+	Prime Patterns
+</P>
+
+<P>
+	This applet demonstrates how patterns may appear in the distribution
+	of the prime numbers.  The applet does the following:
+
+	<OL>
+		<LI>
+			Lays out the consecutive integers in a square, one per point,
+		    along one of several possible paths:
+			
+			<UL>
+			    <LI>Spiralling outward in the counter-clockwise direction. </LI>
+			    <LI>Diagonally, starting from the upper left corner. </LI>
+			    <LI>Sequentially from left to right, row by row. </LI>
+			</UL>
+		<LI>
+			Plots each point whose corresponding integer is prime.
+		</LI>
+	</OL>
+<P></P>
+
+<P>
+	Some patterns will appear as diagonal streaks. This is most
+	visible with the spiral path starting with 41.
+</P>
+
+<H2>
+	To run the demo (the controls are at the bottom of the screen):
+</H2>
+
+<P>
+	<OL>
+		<LI>Enter the size of the side of the square.</LI>
+		<LI>Choose the path to lay out the integers.</LI>
+		<LI>Enter the starting integer.</LI>
+		<LI>Click the Run button.</LI>
+	</OL>
+</P>
+
+<P>
+	The initial display will occur automatically.
+</P>
+
+<APPLET 
+	height=550 
+	archive="PrimePatterns.jar, GraphUtils.jar" 
+	width=500 
+	align=middle 
+	code=numbercruncher.program15_5.PrimePatternsApplet.class 
+	name=PrimePatterns>
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<TITLE>Julia Set Fractal Image</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 16-2
+</P>
+
+<P class="NAME" align="center">
+	Julia Set Fractal Image
+</P>
+
+<P>
+	This applet creates fractal images by plotting Julia sets 
+	derived from iterating complex functions of the form 
+	<EM>z</EM>^2 + <EM>c</EM>, varying <EM>z</EM> over the complex plane 
+	for a given value of <EM>c</EM>. For each complex point <EM>z</EM> 
+	that is not in the set, the "escape velocity" of the point's orbit 
+	is represented by a shade of gray -- the more iterations, the 
+	darker the shade. For each point <EM>z</EM> that is in the set, 
+	its color is determined by the modulus of the final computed orbit value.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>
+		<LI>
+			Enter the real and imaginary parts of the complex 
+  			value <EM>c</EM>, and then press the 
+			<STRONG>Manual</STRONG> button.  Some values of
+			<EM>c</EM> that generate interesting fractal images include:
+			<BR>
+			<BR>
+			<table align="center" cellpadding="5" cellspacing="1" border="1">
+				<tr>
+					<th align="middle"><FONT size=2>Real</FONT></th>
+					<th align="middle"><FONT size=2>Imaginary</FONT></th>
+					<th align="middle"><FONT size=2>Image</FONT></th>
+				</tr>
+				<tr>
+					<td align="right"><FONT size=2>0.30900264</FONT></td>
+					<td align="right"><FONT size=2>-0.0339787</FONT></td>
+					<td align="left"><FONT size=2>Claws</FONT></td>
+				</tr>
+				<tr>
+					<td align="right"><FONT size=2>0.33843684</FONT></td>
+					<td align="right"><FONT size=2>-0.4211402</FONT></td>
+					<td align="left"><FONT size=2>Snowflakes</FONT></td>
+				</tr>
+				<tr>
+					<td align="right"><FONT size=2>-0.3985014</FONT></td>
+					<td align="right"><FONT size=2>0.5848901</FONT></td>
+					<td align="left"><FONT size=2>Turtles</FONT></td>
+				</tr>
+				<tr>
+					<td align="right"><FONT size=2>-0.8184639</FONT></td>
+					<td align="right"><FONT size=2>-0.2129812</FONT></td>
+					<td align="left"><FONT size=2>Serpents</FONT></td>
+				</tr>
+				<tr>
+					<td align="right"><FONT size=2>-0.3346212</FONT></td>
+					<td align="right"><FONT size=2>0.6340579</FONT></td>
+					<td align="left"><FONT size=2>Amoebas</FONT></td>
+				</tr>
+				<tr>
+					<td align="right"><FONT size=2>-0.5530404</FONT></td>
+					<td align="right"><FONT size=2>0.5933997</FONT></td>
+					<td align="left"><FONT size=2>Sparklers</FONT></td>
+				</tr>
+			</table>
+			<BR>
+			You can choose one of these from the drop-down list.
+		</LI>
+		<LI>
+			Or, press the <STRONG>Random</STRONG> button to generate 
+			a random value for <EM>c</EM>. Only 5-10% of random values 
+			produce interesting fractal images, so you may need to 
+			press this button repeately. 
+  		</LI>
+		<LI>
+			Because the fractal images are recursive, you can use the mouse
+			to drag a rectangle around an area of an image that you want to
+			zoom into.
+		</LI>
+	</OL>
+</P>
+
+<APPLET 
+	height=545 
+	archive="JuliaFractal.jar, GraphUtils.jar" 
+	width=450 
+	align=middle 
+	code=numbercruncher.program16_2.JuliaSetApplet.class name=JuliaFractal>
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</BODY>
+</HTML>

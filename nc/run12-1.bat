@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program12_1.BigPrime

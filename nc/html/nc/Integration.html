@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>Numerical Integration</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 7-1
+</P>
+
+<P class="NAME" align="center">
+ 	Numerical Integration
+</P>
+
+<P align="left">
+	This applet demonstrates two numerical integration algorithms.  
+	It computes the area under a function's curve in the
+	interval [2, 10] by using an increasing number of intervals.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>
+		<LI>First define the function to integrate:
+			<OL>
+			    <LI>Click the mouse in the graph panel to set
+					from 2 up to 10 data points.</LI>
+			    <LI>Click the <STRONG>Plot integrand</STRONG>
+			        button to plot the function through the points.</LI>
+			</OL>
+		<LI>Choose a numerical integration algorithm:
+			<UL>
+				<LI>Trapezoidal</LI>
+				<LI>Simpson's Parabolic</LI>
+			</UL>
+		</LI>
+	    <LI>Click the <STRONG>Step</STRONG> button repeatedly to compute the
+		    area under the curve with an increasing number of intervals.</LI>
+	    <LI>At any time, choose the other integration algorithm for the 
+		    same function, or click the <STRONG>Reset</STRONG> button 
+			to start over.</LI>
+	</OL>
+</P>
+
+<APPLET
+    code="numbercruncher.program7_1.IntegrationApplet.class"
+    codebase="./"
+    align="middle"
+    width="600"
+    height="400"
+    archive="Integration.jar, PointUtils.jar, GraphUtils.jar"
+    name="IntegrationApplet">
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>Graphics Tranformation Matrices</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 9-1
+</P>
+
+<P class="NAME" align="center">
+ 	Graphic Tranformation Matrices
+</P>
+
+<P align="left">
+	This applet demonstrates the use of graphic transformation matrices 
+	to translate, scale, and rotate a wire-frame cube in three dimensions.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>
+	    <LI>Press the <strong>Run</strong> button to animate the cube.</LI>
+	    <LI>Press the <strong>Pause</strong> button, and then repeately 
+			press the <strong>Step</strong> button to single-step.</LI>
+		<LI>Press the <strong>Reset</strong> button to restart the cube
+		    with a new (and perhaps more interesting) set of random 
+			translation and rotation parameters.</LI>
+		<LI>The concatenated transformation matrix is displayed below.</LI>
+	</OL>
+</P>
+
+<APPLET
+    code="numbercruncher.program9_1.TransformationApplet.class"
+    codebase="./"
+    align="middle"
+    width="600"
+    height="400"
+    archive="Transformation.jar, Matrix.jar"
+    name="TransformationApplet">
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</body>
+</html>

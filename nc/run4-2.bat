@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program4_2.FractionSum100M

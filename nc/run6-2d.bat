@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program6_2.LinearRegressionDemo

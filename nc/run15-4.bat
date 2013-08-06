@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program15_4.PrimeGenerators

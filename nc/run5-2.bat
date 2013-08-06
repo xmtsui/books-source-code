@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program5_2.RegulaFalsiAlgorithm

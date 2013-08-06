@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program11_2.CompareSolutions

@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program1_3.NotAssociative

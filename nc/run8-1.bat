@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program8_1.SolveDiffEq %1

@@ -1,0 +1,131 @@
+<html>
+<head>
+<title> IEEE 754 Floating-Point Formats </title>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</head>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 3-2
+</P>
+
+<P class="NAME" align="center">
+	IEEE 754 Floating-Point Formats
+</P>
+
+<p>
+	This applet displays the IEEE 754 single-precision and
+        double-precision floating-point formats.
+</p>
+
+<H2>
+	To run the demo:
+</H2>
+
+<P>
+	<ul>
+	    <li>
+			The <font color="blue"><strong>float</strong></font>
+            and <font color="blue"><strong>double</strong></font>
+            panels are independent of each other. 
+		</li>
+	    <li>
+			Enter a floating-point number into the
+            <strong>Value</strong> field and press the
+            <strong>Decompose</strong> button.
+		</li>
+	    <li>
+			Or, enter the individual parts of the number
+            and press the <strong>Show value</strong> button.
+        </li>
+        <li>
+			Press the Enter key after typing a number
+            to enter it into the field.
+		</li>
+        <li>
+			The <strong>Exponent bits</strong>,
+            <strong>Biased value</strong>, and
+            <strong>Unbiased value</strong> fields are interrelated.
+            Changing one automatically changes the other two.
+		</li>
+        <li>
+			If you enter a reserved biased exponent number (0 and 255
+            for float, 0 and 2047 for double), the unbiased field will
+            be disabled.
+		</li>
+        <li>
+			You do not need to enter the leading
+            exponent 0 bits nor the trailing fraction 0 bits.
+		</li>
+        <li>
+			You can also enter into the <strong>Value</strong> field:
+			<ul>
+				<li>
+					<strong>min</strong>, <strong>-min</strong>,
+               		<strong>max</strong>, <strong>-max</strong> 
+					for the minimum	and maximum values of the type
+				</li>
+              	<li>
+					<strong>inf</strong> or <strong>-inf</strong> 
+					for the infinity values of the type
+				</li>
+              	<li>
+					<strong>nan</strong> for the Not-a-Number value of the type
+				</li>
+			</ul>
+		</li>
+	</ul>
+</P>
+
+<applet
+    code="numbercruncher.program3_1.FPFormatsApplet.class"
+    codebase="./"
+    align="middle"
+    width="600"
+    height="460"
+    archive="FPFormats.jar"
+    name="FPFormatsApplet">
+</applet>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</body>
+</html>

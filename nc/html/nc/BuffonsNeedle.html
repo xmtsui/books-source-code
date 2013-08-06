@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>Monte Carlo and Buffon's Needles</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 14-3
+</P>
+
+<P class="NAME" align="center">
+ 	Monte Carlo and Buffon's Needles
+</P>
+
+<P align="left">
+	This applet demonstrates a Monte Carlo algorithm, Button's needles.  
+	Needles of length 1	are dropped randomly onto a sheet of paper 
+	ruled with parallel lines 1 unit apart.  The ratio of the number of 
+	needles that cross a line to the total number of needles approaches 
+	2/<em>pi</em>, from which we can compute the value of <em>pi</em>.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>  
+	    <LI>Press the <strong>Run</strong> button
+	    	to animate the algorithm.</LI>
+	    <LI>Press the <strong>Pause</strong> button
+	    	to pause the algorithm.</LI>
+	    <LI>Press the <strong>Reset</strong> button
+	    	to clear.</LI>
+	</OL>
+<P></P>
+
+<APPLET  
+	code=numbercruncher.program14_3.BuffonApplet.class
+	archive="Buffon.jar, GraphUtils.jar" 
+	height=400 
+	width=600 
+	align=middle
+	name=BuffonApplet>
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</BODY>
+</html>

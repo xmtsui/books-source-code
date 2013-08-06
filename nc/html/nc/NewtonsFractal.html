@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>Newton's Fractal Image</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 16-3
+</P>
+
+<P class="NAME" align="center">
+	Newton's Fractal Image
+</P>
+
+<P>
+	This applet demonstrates how Newton's Method, when applied
+	to the complex plane, can generate a fractal image. The function
+	<EM>f</EM>(<EM>z</EM>) = <EM>z</EM>^3 - 1 has three roots in the 
+	complex plane: 1, -0.5+0.87<EM>i</EM>, and -0.5-0.87<EM>i</EM >. 
+	The applet plots each point in the plane as follows:
+
+	<OL>
+		<LI>
+			Apply Newton's Method using that point as the
+			starting point.
+		</LI>
+		<LI>
+			Set the point's color (red, green, or blue) according
+			to which root the algorithm converges to from that point.
+		</LI>
+		<LI>
+			Set the color intensity of the point according to
+			the number of iterations required to converge to the root.
+		</LI>
+	</OL>
+</P>
+
+<P>
+	The resulting graph is a fractal image.
+</P>
+
+<H2>
+	To run the demo:
+</H2>
+
+<P>
+	<OL>
+		<LI>The initial fractal image is generated automatically.</LI>
+		<LI>Use the mouse to drag a rectangle around an area of the image
+		    that you want to zoom into.</LI>
+	</OL>
+</P>
+
+<APPLET
+	code="numbercruncher.program16_3.NewtonsFractalApplet.class"
+	archive="NewtonsFractal.jar, GraphUtils.jar"
+	align="middle"
+	width="600"
+	height="400"
+	name="NewtonsFractal">
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</BODY>
+</HTML>

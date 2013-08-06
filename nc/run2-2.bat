@@ -1,0 +1,1 @@
+%java% -classpath classes numbercruncher.program2_2.IntegerWrapperClasses

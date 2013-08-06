@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>Solving Differential Equations Numerically</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 8-1
+</P>
+
+<P class="NAME" align="center">
+ 	Solving Differential Equations Numerically
+</P>
+
+<P align="left">
+	This applet demonstrates solving differential equations numerically
+	with various algorithms.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>
+		<LI>Choose a differential equation. Its analytical solution is plotted in 
+			<STRONG><FONT color=#0000ff>blue</FONT></STRONG>.  The initial 
+			condition <em>y</em>(<em>x</em>0) = <em>y</em>0 is represented by a 
+			<STRONG><FONT color=#cc0000>red</FONT></STRONG> dot at 
+			(<em>x</em>0, <em>y</em>0). 
+  		</LI>
+		<LI>Choose an algorithm to solve the equation numerically:
+			<UL>
+				<LI>Euler's</LI> 
+				<LI>Predictor-Corrector</LI>
+				<LI>Fourth-Order Runge-Kutta</LI>
+			</UL>
+		</LI>
+	    <LI>Repeately press the <strong>Step</strong> button (up to 10 times)
+			to single-step the algorithm with an increasing number of intervals. 
+			Each approximate solution is plotted in 
+			<STRONG><FONT color=#cc0000>red</FONT></STRONG>.
+		</LI>
+	    <LI>Press the <strong>Run</strong> button
+	    	to animate the algorithm.
+		</LI>
+	</OL>
+</P>
+
+<APPLET
+	code=numbercruncher.program8_1.SolveDiffEqApplet.class
+ 	archive="SolveDiffEq.jar, GraphUtils.jar" 
+	height=400 
+	width=600 
+	align=middle  
+	name=SolveDiffEqApplet>
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</BODY>
+</html>

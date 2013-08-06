@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>Polynomial Regression</TITLE>
+
+<STYLE TYPE="text/css">
+	H1 {font: bold 12pt Arial; color: maroon;}
+	H2 {font: bold 10pt Arial;}
+	UL,OL {font: 10pt Arial;}
+	P  {font: 10pt Arial; margin-top: -5pt;}
+	P.PROGRAM {margin-top: -5pt;}
+	P.NAME {font: bold 12pt Arial; margin-top: -12pt}
+	P.COPYRIGHT {font: 8pt Arial; margin-top: 5pt;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+	<!--
+	var NS    = (navigator.appName == "Netscape");
+	var oldNS = NS && (navigator.appVersion.charAt(0) <= "4");
+	var newNS = NS && (navigator.appVersion.charAt(0) >= "5");
+
+	function mouseOver(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="underline";
+		}
+	}
+
+	function mouseOut(a)
+	{
+		if (!oldNS) {
+			a.style.textDecoration="none";
+		}
+	}
+	//-->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+<H1 align="center">
+	<EM>Java Number Cruncher</EM>
+</H1>
+
+<P class="PROGRAM" align="center">
+	Program 10-2
+</P>
+
+<P class="NAME" align="center">
+ 	Polynomial Regression
+</P>
+
+<P align="left">
+	This applet demonstrates polynomial regression.  It uses the least
+	squares algorithm to plot a regression polynomial of degree 1 through 9
+	among <EM>n</EM> data points, where <EM>n</EM> is at least one more than
+	the degree.
+</P>
+
+<H2>
+	To run the demo:</STRONG>
+</H2>
+
+<P>
+	<OL>
+		<LI>Choose a degree for the regression polynomial.</LI>
+	    <LI>Click the mouse in the graph panel to set up to
+			100 data points, but at least one more than the degree.</LI>
+	    <LI>Click the <STRONG>Regression poly</STRONG>
+	        button to plot the regression polynomial.</LI>
+	    <LI>You can add more data points and click the
+	    	<STRONG>Regression poly</STRONG> button again.</LI>
+		<LI>You can choose a different polynomial order and then
+		    click the <STRONG>Regression poly</STRONG> button
+			to plot a new regression polynomial among the same points.</LI>
+	    <LI>Click the <STRONG>Reset</STRONG> button to start over.</LI>
+	</OL>
+</P>
+
+<P>
+	If the applet fails to create a regression function, try adding 
+	more points and press the <STRONG>Regression poly</STRONG> button again.
+</P>
+
+<APPLET
+    code="numbercruncher.program10_2.RegressionApplet.class"
+    codebase="./"
+    align="middle"
+    width="600"
+    height="400"
+    archive="Regression.jar, PointUtils.jar, Matrix.jar, GraphUtils.jar"
+    name="PolynomialRegressionApplet">
+</APPLET>
+
+<P class="COPYRIGHT" align="center">
+	© 2002 by Ronald Mak
+</P>
+
+</body>
+</html>

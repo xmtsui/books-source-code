@@ -59,3 +59,7 @@ main-cloudata/nutch/
 main-cloudata/conf/
 main-cloudata/cluster_conf/
 
+#Customerized for books-src-code
+MiA/
+hadoop-book/
+

@@ -10,6 +10,7 @@ books src
 [<\<大话数据结构>>](http://www.cnblogs.com/cj723/archive/2011/02/06/1949498.html)  
 [<\<大话设计模式>>](http://www.cnblogs.com/cj723/archive/2007/12/30/1021314.html)  
 [<\<深入理解Java虚拟机：JVM高级特性与最佳实践（第2版）>>](http://www.hzbook.com/Books/7049.html)  
+[<\<"Java Software Structures: Designing And Using Data Structures, 2/e">>](http://cssupport.pearsoncmg.com/book.php?author_id=108) 中文版：《数据结构(java版)》
 
 articles src
 ---

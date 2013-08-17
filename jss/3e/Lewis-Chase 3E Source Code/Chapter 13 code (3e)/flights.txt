@@ -1,0 +1,25 @@
+Boston
+New York
+Philadelphia
+Roanoke
+Charlotte
+Atlanta
+Los Angeles
+San Francisco
+Honolulu
+Topeka
+Seattle
+
+Boston	New York	120
+Boston	Philadelphia	219
+Philadelphia	New York	225
+Roanoke	New York	320
+Roanoke	Charlotte	150
+Charlotte	Atlanta	176
+New York	Los Angeles	550
+Atlanta	Seattle	444
+Boston	San Francisco	525
+San Francisco	Los Angeles	200
+Seattle	Honolulu	468
+Honolulu	Topeka	543
+Topeka	Seattle	405

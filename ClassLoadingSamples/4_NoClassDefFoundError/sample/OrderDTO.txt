@@ -1,0 +1,369 @@
+Compiled from "OrderDTO.java"
+public class com.taobao.trade.platform.api.creating.OrderDTO extends java.lang.Object
+  SourceFile: "OrderDTO.java"
+  minor version: 0
+  major version: 50
+  Constant pool:
+const #1 = Method	#23.#85;	//  java/lang/Object."<init>":()V
+const #2 = Method	#86.#87;	//  java/util/Collections.emptyList:()Ljava/util/List;
+const #3 = Field	#22.#88;	//  com/taobao/trade/platform/api/creating/OrderDTO.shopPromotionIds:Ljava/util/List;
+const #4 = Method	#89.#90;	//  com/google/common/collect/Maps.newHashMap:()Ljava/util/HashMap;
+const #5 = Field	#22.#91;	//  com/taobao/trade/platform/api/creating/OrderDTO.attributes:Ljava/util/Map;
+const #6 = Field	#22.#92;	//  com/taobao/trade/platform/api/creating/OrderDTO.bizAttributes:Ljava/util/Map;
+const #7 = Field	#22.#93;	//  com/taobao/trade/platform/api/creating/OrderDTO.groupBuyInfoDTO:Lcom/taobao/trade/platform/api/creating/GroupBuyInfoDTO;
+const #8 = Field	#22.#94;	//  com/taobao/trade/platform/api/creating/OrderDTO.orderLineDTOs:Ljava/util/List;
+const #9 = InterfaceMethod	#95.#96;	//  java/util/List.size:()I
+const #10 = Field	#97.#98;	//  com/taobao/trade/platform/api/creating/GroupBuyInfoDTO.itemId:J
+const #11 = InterfaceMethod	#95.#99;	//  java/util/List.get:(I)Ljava/lang/Object;
+const #12 = class	#100;	//  com/taobao/trade/platform/api/creating/OrderLineDTO
+const #13 = Field	#12.#98;	//  com/taobao/trade/platform/api/creating/OrderLineDTO.itemId:J
+const #14 = String	#101;	//  groupBuy parameter error
+const #15 = Method	#102.#103;	//  com/google/common/base/Preconditions.checkState:(ZLjava/lang/Object;)V
+const #16 = Field	#22.#104;	//  com/taobao/trade/platform/api/creating/OrderDTO.attributesValidator:Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+const #17 = InterfaceMethod	#105.#106;	//  com/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator.validateAttribute:(Ljava/lang/String;Ljava/lang/String;)V
+const #18 = InterfaceMethod	#107.#108;	//  java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+const #19 = InterfaceMethod	#105.#109;	//  com/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator.validateBizAttribute:(Ljava/lang/String;Ljava/lang/String;)V
+const #20 = Method	#86.#110;	//  java/util/Collections.unmodifiableMap:(Ljava/util/Map;)Ljava/util/Map;
+const #21 = Method	#111.#112;	//  com/taobao/trade/platform/api/creating/validator/attributes/AttributesValidatorFactory.getOrderAttributesValidator:()Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+const #22 = class	#113;	//  com/taobao/trade/platform/api/creating/OrderDTO
+const #23 = class	#114;	//  java/lang/Object
+const #24 = Asciz	orderLineDTOs;
+const #25 = Asciz	Ljava/util/List;;
+const #26 = Asciz	Signature;
+const #27 = Asciz	Ljava/util/List<Lcom/taobao/trade/platform/api/creating/OrderLineDTO;>;;
+const #28 = Asciz	predefinedOrderPropsDTO;
+const #29 = Asciz	Lcom/taobao/trade/platform/api/creating/PredefinedOrderPropsDTO;;
+const #30 = Asciz	transportationMethod;
+const #31 = Asciz	Ljava/lang/String;;
+const #32 = Asciz	codRank;
+const #33 = Asciz	I;
+const #34 = Asciz	outOrderId;
+const #35 = Asciz	postageInsurance;
+const #36 = Asciz	Lcom/taobao/trade/platform/api/creating/PostageInsuranceDTO;;
+const #37 = Asciz	buyerMessage;
+const #38 = Asciz	anonymous;
+const #39 = Asciz	Z;
+const #40 = Asciz	invoiceTitle;
+const #41 = Asciz	groupBuyInfoDTO;
+const #42 = Asciz	Lcom/taobao/trade/platform/api/creating/GroupBuyInfoDTO;;
+const #43 = Asciz	verticalMarketExtDTO;
+const #44 = Asciz	Lcom/taobao/trade/platform/api/creating/IVerticalMarketExtDTO;;
+const #45 = Asciz	shopPromotionIds;
+const #46 = Asciz	Ljava/util/List<Ljava/lang/String;>;;
+const #47 = Asciz	predefinedPostageTemplateId;
+const #48 = Asciz	J;
+const #49 = Asciz	attributes;
+const #50 = Asciz	Ljava/util/Map;;
+const #51 = Asciz	Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;;
+const #52 = Asciz	bizAttributes;
+const #53 = Asciz	attributesValidator;
+const #54 = Asciz	Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;;
+const #55 = Asciz	TRANSPORTATION_METHOD_SURFACE_MAIL;
+const #56 = Asciz	ConstantValue;
+const #57 = String	#115;	//  SURFACE_MAIL
+const #58 = Asciz	TRANSPORTATION_METHOD_EXPRESS;
+const #59 = String	#116;	//  EXPRESS
+const #60 = Asciz	TRANSPORTATION_METHOD_EMS;
+const #61 = String	#117;	//  EMS
+const #62 = Asciz	<init>;
+const #63 = Asciz	()V;
+const #64 = Asciz	Code;
+const #65 = Asciz	LineNumberTable;
+const #66 = Asciz	LocalVariableTable;
+const #67 = Asciz	this;
+const #68 = Asciz	Lcom/taobao/trade/platform/api/creating/OrderDTO;;
+const #69 = Asciz	checkValidity;
+const #70 = Asciz	StackMapTable;
+const #71 = Asciz	addAttributes;
+const #72 = Asciz	(Ljava/lang/String;Ljava/lang/String;)V;
+const #73 = Asciz	key;
+const #74 = Asciz	value;
+const #75 = Asciz	RuntimeInvisibleParameterAnnotations;
+const #76 = Asciz	Lorg/jetbrains/annotations/NotNull;;
+const #77 = Asciz	addBizAttributes;
+const #78 = Asciz	getAttributes;
+const #79 = Asciz	()Ljava/util/Map;;
+const #80 = Asciz	()Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;;
+const #81 = Asciz	getBizAttributes;
+const #82 = Asciz	<clinit>;
+const #83 = Asciz	SourceFile;
+const #84 = Asciz	OrderDTO.java;
+const #85 = NameAndType	#62:#63;//  "<init>":()V
+const #86 = class	#118;	//  java/util/Collections
+const #87 = NameAndType	#119:#120;//  emptyList:()Ljava/util/List;
+const #88 = NameAndType	#45:#25;//  shopPromotionIds:Ljava/util/List;
+const #89 = class	#121;	//  com/google/common/collect/Maps
+const #90 = NameAndType	#122:#123;//  newHashMap:()Ljava/util/HashMap;
+const #91 = NameAndType	#49:#50;//  attributes:Ljava/util/Map;
+const #92 = NameAndType	#52:#50;//  bizAttributes:Ljava/util/Map;
+const #93 = NameAndType	#41:#42;//  groupBuyInfoDTO:Lcom/taobao/trade/platform/api/creating/GroupBuyInfoDTO;
+const #94 = NameAndType	#24:#25;//  orderLineDTOs:Ljava/util/List;
+const #95 = class	#124;	//  java/util/List
+const #96 = NameAndType	#125:#126;//  size:()I
+const #97 = class	#127;	//  com/taobao/trade/platform/api/creating/GroupBuyInfoDTO
+const #98 = NameAndType	#128:#48;//  itemId:J
+const #99 = NameAndType	#129:#130;//  get:(I)Ljava/lang/Object;
+const #100 = Asciz	com/taobao/trade/platform/api/creating/OrderLineDTO;
+const #101 = Asciz	groupBuy parameter error;
+const #102 = class	#131;	//  com/google/common/base/Preconditions
+const #103 = NameAndType	#132:#133;//  checkState:(ZLjava/lang/Object;)V
+const #104 = NameAndType	#53:#54;//  attributesValidator:Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+const #105 = class	#134;	//  com/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator
+const #106 = NameAndType	#135:#72;//  validateAttribute:(Ljava/lang/String;Ljava/lang/String;)V
+const #107 = class	#136;	//  java/util/Map
+const #108 = NameAndType	#137:#138;//  put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+const #109 = NameAndType	#139:#72;//  validateBizAttribute:(Ljava/lang/String;Ljava/lang/String;)V
+const #110 = NameAndType	#140:#141;//  unmodifiableMap:(Ljava/util/Map;)Ljava/util/Map;
+const #111 = class	#142;	//  com/taobao/trade/platform/api/creating/validator/attributes/AttributesValidatorFactory
+const #112 = NameAndType	#143:#144;//  getOrderAttributesValidator:()Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+const #113 = Asciz	com/taobao/trade/platform/api/creating/OrderDTO;
+const #114 = Asciz	java/lang/Object;
+const #115 = Asciz	SURFACE_MAIL;
+const #116 = Asciz	EXPRESS;
+const #117 = Asciz	EMS;
+const #118 = Asciz	java/util/Collections;
+const #119 = Asciz	emptyList;
+const #120 = Asciz	()Ljava/util/List;;
+const #121 = Asciz	com/google/common/collect/Maps;
+const #122 = Asciz	newHashMap;
+const #123 = Asciz	()Ljava/util/HashMap;;
+const #124 = Asciz	java/util/List;
+const #125 = Asciz	size;
+const #126 = Asciz	()I;
+const #127 = Asciz	com/taobao/trade/platform/api/creating/GroupBuyInfoDTO;
+const #128 = Asciz	itemId;
+const #129 = Asciz	get;
+const #130 = Asciz	(I)Ljava/lang/Object;;
+const #131 = Asciz	com/google/common/base/Preconditions;
+const #132 = Asciz	checkState;
+const #133 = Asciz	(ZLjava/lang/Object;)V;
+const #134 = Asciz	com/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+const #135 = Asciz	validateAttribute;
+const #136 = Asciz	java/util/Map;
+const #137 = Asciz	put;
+const #138 = Asciz	(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;;
+const #139 = Asciz	validateBizAttribute;
+const #140 = Asciz	unmodifiableMap;
+const #141 = Asciz	(Ljava/util/Map;)Ljava/util/Map;;
+const #142 = Asciz	com/taobao/trade/platform/api/creating/validator/attributes/AttributesValidatorFactory;
+const #143 = Asciz	getOrderAttributesValidator;
+const #144 = Asciz	()Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;;
+
+{
+public java.util.List orderLineDTOs;
+  Signature: length = 0x2
+   00 1B 
+
+public com.taobao.trade.platform.api.creating.PredefinedOrderPropsDTO predefinedOrderPropsDTO;
+
+public java.lang.String transportationMethod;
+
+public int codRank;
+
+public java.lang.String outOrderId;
+
+public com.taobao.trade.platform.api.creating.PostageInsuranceDTO postageInsurance;
+
+public java.lang.String buyerMessage;
+
+public boolean anonymous;
+
+public java.lang.String invoiceTitle;
+
+public com.taobao.trade.platform.api.creating.GroupBuyInfoDTO groupBuyInfoDTO;
+
+public com.taobao.trade.platform.api.creating.IVerticalMarketExtDTO verticalMarketExtDTO;
+
+public java.util.List shopPromotionIds;
+  Signature: length = 0x2
+   00 2E 
+
+public long predefinedPostageTemplateId;
+
+private final java.util.Map attributes;
+  Signature: length = 0x2
+   00 33 
+
+private final java.util.Map bizAttributes;
+  Signature: length = 0x2
+   00 33 
+
+private static final com.taobao.trade.platform.api.creating.validator.attributes.IAttributesValidator attributesValidator;
+
+public static final java.lang.String TRANSPORTATION_METHOD_SURFACE_MAIL;
+  Constant value: String SURFACE_MAIL
+public static final java.lang.String TRANSPORTATION_METHOD_EXPRESS;
+  Constant value: String EXPRESS
+public static final java.lang.String TRANSPORTATION_METHOD_EMS;
+  Constant value: String EMS
+public com.taobao.trade.platform.api.creating.OrderDTO();
+  Code:
+   Stack=2, Locals=1, Args_size=1
+   0:	aload_0
+   1:	invokespecial	#1; //Method java/lang/Object."<init>":()V
+   4:	aload_0
+   5:	invokestatic	#2; //Method java/util/Collections.emptyList:()Ljava/util/List;
+   8:	putfield	#3; //Field shopPromotionIds:Ljava/util/List;
+   11:	aload_0
+   12:	invokestatic	#4; //Method com/google/common/collect/Maps.newHashMap:()Ljava/util/HashMap;
+   15:	putfield	#5; //Field attributes:Ljava/util/Map;
+   18:	aload_0
+   19:	invokestatic	#4; //Method com/google/common/collect/Maps.newHashMap:()Ljava/util/HashMap;
+   22:	putfield	#6; //Field bizAttributes:Ljava/util/Map;
+   25:	return
+  LineNumberTable: 
+   line 15: 0
+   line 28: 4
+   line 30: 11
+   line 31: 18
+
+  LocalVariableTable: 
+   Start  Length  Slot  Name   Signature
+   0      26      0    this       Lcom/taobao/trade/platform/api/creating/OrderDTO;
+
+
+public void checkValidity();
+  Code:
+   Stack=4, Locals=1, Args_size=1
+   0:	aload_0
+   1:	getfield	#7; //Field groupBuyInfoDTO:Lcom/taobao/trade/platform/api/creating/GroupBuyInfoDTO;
+   4:	ifnull	47
+   7:	aload_0
+   8:	getfield	#8; //Field orderLineDTOs:Ljava/util/List;
+   11:	invokeinterface	#9,  1; //InterfaceMethod java/util/List.size:()I
+   16:	iconst_1
+   17:	if_icmpne	51
+   20:	aload_0
+   21:	getfield	#7; //Field groupBuyInfoDTO:Lcom/taobao/trade/platform/api/creating/GroupBuyInfoDTO;
+   24:	getfield	#10; //Field com/taobao/trade/platform/api/creating/GroupBuyInfoDTO.itemId:J
+   27:	aload_0
+   28:	getfield	#8; //Field orderLineDTOs:Ljava/util/List;
+   31:	iconst_0
+   32:	invokeinterface	#11,  2; //InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+   37:	checkcast	#12; //class com/taobao/trade/platform/api/creating/OrderLineDTO
+   40:	getfield	#13; //Field com/taobao/trade/platform/api/creating/OrderLineDTO.itemId:J
+   43:	lcmp
+   44:	ifne	51
+   47:	iconst_1
+   48:	goto	52
+   51:	iconst_0
+   52:	ldc	#14; //String groupBuy parameter error
+   54:	invokestatic	#15; //Method com/google/common/base/Preconditions.checkState:(ZLjava/lang/Object;)V
+   57:	return
+  LineNumberTable: 
+   line 39: 0
+   line 43: 57
+
+  LocalVariableTable: 
+   Start  Length  Slot  Name   Signature
+   0      58      0    this       Lcom/taobao/trade/platform/api/creating/OrderDTO;
+
+  StackMapTable: number_of_entries = 3
+   frame_type = 47 /* same */
+   frame_type = 3 /* same */
+   frame_type = 64 /* same_locals_1_stack_item */
+     stack = [ int ]
+
+
+public void addAttributes(java.lang.String, java.lang.String);
+  Code:
+   Stack=3, Locals=3, Args_size=3
+   0:	getstatic	#16; //Field attributesValidator:Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+   3:	aload_1
+   4:	aload_2
+   5:	invokeinterface	#17,  3; //InterfaceMethod com/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator.validateAttribute:(Ljava/lang/String;Ljava/lang/String;)V
+   10:	aload_0
+   11:	getfield	#5; //Field attributes:Ljava/util/Map;
+   14:	aload_1
+   15:	aload_2
+   16:	invokeinterface	#18,  3; //InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+   21:	pop
+   22:	return
+  LineNumberTable: 
+   line 46: 0
+   line 47: 10
+   line 48: 22
+
+  LocalVariableTable: 
+   Start  Length  Slot  Name   Signature
+   0      23      0    this       Lcom/taobao/trade/platform/api/creating/OrderDTO;
+   0      23      1    key       Ljava/lang/String;
+   0      23      2    value       Ljava/lang/String;
+
+  RuntimeInvisibleParameterAnnotations: length = 0xD
+   02 00 01 00 4C 00 00 00 01 00 4C 00 00 
+
+public void addBizAttributes(java.lang.String, java.lang.String);
+  Code:
+   Stack=3, Locals=3, Args_size=3
+   0:	getstatic	#16; //Field attributesValidator:Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+   3:	aload_1
+   4:	aload_2
+   5:	invokeinterface	#19,  3; //InterfaceMethod com/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator.validateBizAttribute:(Ljava/lang/String;Ljava/lang/String;)V
+   10:	aload_0
+   11:	getfield	#6; //Field bizAttributes:Ljava/util/Map;
+   14:	aload_1
+   15:	aload_2
+   16:	invokeinterface	#18,  3; //InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+   21:	pop
+   22:	return
+  LineNumberTable: 
+   line 51: 0
+   line 52: 10
+   line 53: 22
+
+  LocalVariableTable: 
+   Start  Length  Slot  Name   Signature
+   0      23      0    this       Lcom/taobao/trade/platform/api/creating/OrderDTO;
+   0      23      1    key       Ljava/lang/String;
+   0      23      2    value       Ljava/lang/String;
+
+  RuntimeInvisibleParameterAnnotations: length = 0xD
+   02 00 01 00 4C 00 00 00 01 00 4C 00 00 
+
+public java.util.Map getAttributes();
+  Code:
+   Stack=1, Locals=1, Args_size=1
+   0:	aload_0
+   1:	getfield	#5; //Field attributes:Ljava/util/Map;
+   4:	invokestatic	#20; //Method java/util/Collections.unmodifiableMap:(Ljava/util/Map;)Ljava/util/Map;
+   7:	areturn
+  LineNumberTable: 
+   line 56: 0
+
+  LocalVariableTable: 
+   Start  Length  Slot  Name   Signature
+   0      8      0    this       Lcom/taobao/trade/platform/api/creating/OrderDTO;
+
+  Signature: length = 0x2
+   00 50 
+
+public java.util.Map getBizAttributes();
+  Code:
+   Stack=1, Locals=1, Args_size=1
+   0:	aload_0
+   1:	getfield	#6; //Field bizAttributes:Ljava/util/Map;
+   4:	invokestatic	#20; //Method java/util/Collections.unmodifiableMap:(Ljava/util/Map;)Ljava/util/Map;
+   7:	areturn
+  LineNumberTable: 
+   line 60: 0
+
+  LocalVariableTable: 
+   Start  Length  Slot  Name   Signature
+   0      8      0    this       Lcom/taobao/trade/platform/api/creating/OrderDTO;
+
+  Signature: length = 0x2
+   00 50 
+
+static {};
+  Code:
+   Stack=1, Locals=0, Args_size=0
+   0:	invokestatic	#21; //Method com/taobao/trade/platform/api/creating/validator/attributes/AttributesValidatorFactory.getOrderAttributesValidator:()Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+   3:	putstatic	#16; //Field attributesValidator:Lcom/taobao/trade/platform/api/creating/validator/attributes/IAttributesValidator;
+   6:	return
+  LineNumberTable: 
+   line 32: 0
+
+
+}
+

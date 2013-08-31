@@ -1,0 +1,166 @@
+[INFO] Scanning for projects...
+[INFO] Reactor build order: 
+[INFO]   tradeface
+[INFO]   tradeface-api
+[INFO]   tradeface-biz
+[INFO]   tradeface-web
+[INFO] Searching repository for plugin with prefix: 'dependency'.
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tradeface
+[INFO]    task-segment: [dependency:tree]
+[INFO] ------------------------------------------------------------------------
+[INFO] [dependency:tree {execution: default-cli}]
+[INFO] com.taobao.trade.face:tradeface:pom:1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tradeface-api
+[INFO]    task-segment: [dependency:tree]
+[INFO] ------------------------------------------------------------------------
+[INFO] [dependency:tree {execution: default-cli}]
+[INFO] com.taobao.trade.face:tradeface-api:jar:1.0.0-SNAPSHOT
+[INFO] +- com.intellij:annotations:jar:8.0:compile
+[INFO] +- com.google.guava:guava:jar:r07:compile
+[INFO] +- com.taobao.trade.platform:tp-client:jar:1.0.0-SNAPSHOT:compile
+[INFO] |  +- org.apache.mina:mina-core:jar:1.1.5:compile
+[INFO] |  +- com.alibaba.toolkit.common.lang:lang:jar:1.0:compile
+[INFO] |  +- com.taobao.common.constants:common-constants:jar:1.0.10-SNAPSHOT:compile (version managed from 1.0.11-SNAPSHOT)
+[INFO] |  +- hessian:hessian:jar:3.0.13:compile
+[INFO] |  +- org.springframework:spring:jar:2.5.6.SEC02:compile (version managed from 2.5.6)
+[INFO] |  +- com.taobao.notify:common-cs:jar:1.2:compile
+[INFO] |  +- com.taobao.common.tair:common-tair:jar:2.2.4:compile (version managed from 2.2.5)
+[INFO] |  +- log4j:log4j:jar:1.2.15:compile
+[INFO] |  |  +- javax.mail:mail:jar:1.4:compile
+[INFO] |  |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  |  +- javax.jms:jms:jar:1.1:compile
+[INFO] |  |  +- com.sun.jdmk:jmxtools:jar:1.2.1:compile
+[INFO] |  |  \- com.sun.jmx:jmxri:jar:1.2.1:compile
+[INFO] |  +- commons-io:commons-io:jar:2.0:compile (version managed from 1.3.1)
+[INFO] |  \- com.thoughtworks.xstream:xstream:jar:1.3.1:compile
+[INFO] |     \- xpp3:xpp3_min:jar:1.1.4c:compile
+[INFO] +- com.taobao.common.uic.uic-common:common-uic-common:jar:3.0.3:compile
+[INFO] +- com.taobao.forest:forest-domain:jar:1.5.2:compile
+[INFO] +- com.taobao.itemcenter:itemcenter-common:jar:1.11.0.2:compile
+[INFO] +- com.taobao.itemcenter:itemcenter-client:jar:1.11.0.2:compile
+[INFO] +- commons-lang:commons-lang:jar:2.4:compile
+[INFO] +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] +- org.jmock:jmock-junit4:jar:2.5.1:test
+[INFO] |  +- org.jmock:jmock:jar:2.5.1:test
+[INFO] |  |  +- org.hamcrest:hamcrest-core:jar:1.1:test
+[INFO] |  |  \- org.hamcrest:hamcrest-library:jar:1.1:test
+[INFO] |  \- junit:junit-dep:jar:4.4:test
+[INFO] +- org.jmock:jmock-legacy:jar:2.5.1:test
+[INFO] |  \- org.objenesis:objenesis:jar:1.0:test
+[INFO] +- junit:junit:jar:4.4:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.5.6:compile
+[INFO] +- org.slf4j:slf4j-log4j12:jar:1.5.6:runtime
+[INFO] +- joda-time:joda-time:jar:1.6.2:compile
+[INFO] +- com.taobao.util:util:jar:1.2.4:compile
+[INFO] +- com.taobao.forest:forest-client:jar:1.5.2:compile
+[INFO] +- com.taobao.tc:tc-client:jar:6.0.16-SNAPSHOT:compile
+[INFO] +- com.taobao.tc:tc-domain:jar:6.0.16-SNAPSHOT:compile
+[INFO] +- com.taobao.common.division:common-division:jar:1.0:compile
+[INFO] +- com.taobao.common.uic.usertag-client:common-usertag-client:jar:1.0.1:compile
+[INFO] +- com.taobao.tagcenter:tagcenter-client:jar:1.1.3-SNAPSHOT:compile
+[INFO] +- com.taobao.tagcenter:tagcenter-common:jar:1.1.3-SNAPSHOT:compile
+[INFO] +- com.taobao.punishcenter:common:jar:1.2.1:compile
+[INFO] +- com.taobao.punishcenter:punishclient:jar:1.0.1:compile
+[INFO] +- com.taobao.common.ip:common-ip:jar:1.2.0:compile
+[INFO] +- com.taobao.common.keycenter.keycenter-common:common-keycenter-common:jar:1.2:compile
+[INFO] +- com.taobao.common.keycenter.keycenter-client:common-keycenter-client:jar:1.2:compile
+[INFO] +- com.taobao.common.itemmisc:common-itemmisc:jar:1.0.6-SNAPSHOT:compile
+[INFO] +- com.alibaba.toolkit:toolkit-webx-all-in-one:jar:2.0:compile
+[INFO] |  +- commons-beanutils:commons-beanutils:jar:1.7.0:compile
+[INFO] |  +- commons-logging:commons-logging:jar:99.0-does-not-exist:compile
+[INFO] |  +- commons-codec:commons-codec:jar:1.3:compile
+[INFO] |  +- commons-configuration:commons-configuration:jar:1.6:compile
+[INFO] |  +- commons-digester:commons-digester:jar:1.7:compile
+[INFO] |  +- commons-beanutils:commons-beanutils-core:jar:1.8.0:compile
+[INFO] |  +- commons-jexl:commons-jexl:jar:1.1:compile
+[INFO] |  +- commons-fileupload:commons-fileupload:jar:1.2.1:compile
+[INFO] |  +- commons-jelly:commons-jelly:jar:1.0-RC1:compile
+[INFO] |  +- javax.servlet:jstl:jar:1.2:compile
+[INFO] |  +- ecs:ecs:jar:1.4.2:compile
+[INFO] |  +- oro:oro:jar:2.0.8:compile
+[INFO] |  +- org.freemarker:freemarker:jar:2.3.15:compile
+[INFO] |  +- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |  +- jaxen:jaxen:jar:1.1.1:compile
+[INFO] |  \- cglib:cglib-nodep:jar:2.1_3:compile
+[INFO] +- com.taobao.shopcenter:postage-client:jar:1.1.2-SNAPSHOT:compile
+[INFO] +- com.taobao.shopcenter:core-client:jar:2.6.0-SNAPSHOT:compile
+[INFO] |  +- com.taobao.shopcenter:common-client:jar:2.2.0-SNAPSHOT:compile
+[INFO] |  |  +- com.taobao.rjdbc:rjdbc:jar:1.1:compile
+[INFO] |  |  |  +- com.taobao.logstat:logstat-client:jar:1.0:compile
+[INFO] |  |  |  |  \- com.taobao.logstat:logstat-common:jar:1.0.1:compile
+[INFO] |  |  |  +- commons-pool:commons-pool:jar:1.3:compile
+[INFO] |  |  |  +- commons-dbcp:commons-dbcp:jar:1.2.2:compile
+[INFO] |  |  |  \- commons-httpclient:commons-httpclient:jar:2.0.2:compile (version managed from 3.1)
+[INFO] |  |  \- com.taobao.common.smonitor:smonitor:jar:1.0:compile
+[INFO] |  +- com.taobao.common.tfs:common-tfs:jar:1.2.3:compile (version managed from 1.2)
+[INFO] |  +- com.alibaba.toolkit.service.upload:upload:jar:1.0:compile
+[INFO] |  \- com.taobao.common.monitor:common-monitor:jar:1.0.7:compile
+[INFO] +- com.taobao.misccenter:misccenter-common:jar:1.3.25:compile
+[INFO] +- com.taobao.vic:vic-client:jar:1.0.3-SNAPSHOT:compile
+[INFO] +- com.taobao.vic:vic-common:jar:1.0.3-SNAPSHOT:compile
+[INFO] +- com.taobao.ump:ump-core-client:jar:1.0.0-SNAPSHOT:compile
+[INFO] |  \- com.taobao.hsf:hsf.notify.spring:jar:1.4.7.7:compile (version managed from 1.4.7.8)
+[INFO] +- com.taobao.ump:ump-common-client:jar:1.0.0-SNAPSHOT:compile
+[INFO] |  +- com.taobao.common.dao:common-dao:jar:1.0.3:compile
+[INFO] |  +- com.alibaba.toolkit.common.enum:enum:jar:1.0:compile
+[INFO] |  +- com.alibaba.toolkit.common.logging:logging:jar:1.0:compile
+[INFO] |  +- com.alibaba.toolkit.biz.command:command:jar:1.0:compile
+[INFO] |  +- com.taobao.biz.tcp:tcp:jar:1.0:compile
+[INFO] |  +- com.taobao.common.uic.uic-upgrade:common-uic-upgrade:jar:2.2.3:compile
+[INFO] |  +- com.taobao.common.uic.uic-thunderbird:common-uic-thunderbird:jar:1.2.0:compile
+[INFO] |  +- com.taobao.common.tfs:redundant-tfs:jar:1.3:compile
+[INFO] |  |  \- com.taobao.config.client.helper:config-client-helper:jar:1.1:compile
+[INFO] |  +- com.alibaba.toolkit.common.convert:convert:jar:1.0:compile
+[INFO] |  +- com.taobao.biz.traderule:traderule:jar:1.3.4-SNAPSHOT:compile (version managed from 1.3)
+[INFO] |  \- com.google.collections:google-collections:jar:1.0:compile
+[INFO] +- com.taobao.logistics:logistics-common:jar:1.4.2:compile
+[INFO] \- com.taobao.logistics:logistics-client:jar:1.4.1:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tradeface-biz
+[INFO]    task-segment: [dependency:tree]
+[INFO] ------------------------------------------------------------------------
+[INFO] snapshot com.taobao.trade.face:tradeface-api:1.0.0-SNAPSHOT: checking for updates from snapshots
+Downloading: http://mvnrepo.taobao.ali.com/mvn/repository/com/taobao/trade/face/tradeface-api/1.0.0-SNAPSHOT/tradeface-api-1.0.0-SNAPSHOT.jar
+[INFO] Unable to find resource 'com.taobao.trade.face:tradeface-api:jar:1.0.0-SNAPSHOT' in repository snapshots (http://mvnrepo.taobao.ali.com/mvn/repository)
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD ERROR
+[INFO] ------------------------------------------------------------------------
+[INFO] Failed to resolve artifact.
+
+Missing:
+----------
+1) com.taobao.trade.face:tradeface-api:jar:1.0.0-SNAPSHOT
+
+  Try downloading the file manually from the project website.
+
+  Then, install it using the command: 
+      mvn install:install-file -DgroupId=com.taobao.trade.face -DartifactId=tradeface-api -Dversion=1.0.0-SNAPSHOT -Dpackaging=jar -Dfile=/path/to/file
+
+  Alternatively, if you host your own repository you can deploy the file there: 
+      mvn deploy:deploy-file -DgroupId=com.taobao.trade.face -DartifactId=tradeface-api -Dversion=1.0.0-SNAPSHOT -Dpackaging=jar -Dfile=/path/to/file -Durl=[url] -DrepositoryId=[id]
+
+  Path to dependency: 
+  	1) com.taobao.trade.face:tradeface-biz:jar:1.0.0-SNAPSHOT
+  	2) com.taobao.trade.face:tradeface-api:jar:1.0.0-SNAPSHOT
+
+----------
+1 required artifact is missing.
+
+for artifact: 
+  com.taobao.trade.face:tradeface-biz:jar:1.0.0-SNAPSHOT
+
+from the specified remote repositories:
+  tbmirror-snapshots (http://mvnrepo.taobao.ali.com/mvn/repository),
+  tbmirror (http://mvnrepo.taobao.ali.com/mvn/repository)
+
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] For more information, run Maven with the -e switch
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6 seconds
+[INFO] Finished at: Thu Mar 24 21:17:00 CST 2011
+[INFO] Final Memory: 28M/123M
+[INFO] ------------------------------------------------------------------------

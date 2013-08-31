@@ -1,0 +1,4 @@
+public class Baz {
+  public static void test() {
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans spring-beans-2.0.xsd
+       http://www.springframework.org/schema/aop spring-aop-2.0.xsd
+	   http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-2.5.xsd">
+
+	<bean id="transport" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+       <property name="staticField">
+              <value>com.ibm.mq.jms.JMSC.MQJMS_TP_CLIENT_MQ_TCPIP</value>
+       </property>
+	</bean>
+ 
+    <bean id="mqQueueConnectionFactory" class="com.ibm.mq.jms.MQQueueConnectionFactory">
+       <property name="transportType" ref="transport" />
+       <property name="queueManager" value="QM1" />
+       <property name="hostName" value="10.211.55.5" />
+       <property name="port" value="1415" />
+       <property name="channel" value="SYSTEM.DEF.SVRCONN" />
+    </bean>
+
+	<bean id="secureQueueConnectionFactory" class="org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter">
+       <property name="targetConnectionFactory" ref="mqQueueConnectionFactory"/>
+       <property name="username" value=" "/>
+       <property name="password" value=" "/>
+    </bean>
+     
+    <bean id="mqQueue1" class="com.ibm.mq.jms.MQQueue">
+       <constructor-arg value="MQueue1" />
+    </bean>
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate"> 
+	   <property name="connectionFactory" ref="secureQueueConnectionFactory"/> 
+	   <property name="defaultDestination" ref="mqQueue1"/> 
+	   <property name="pubSubDomain" value="false"/> 
+	</bean> 
+	
+	<bean id="jmsSender" class="com.jms.client.JMSSender">
+	   <property name="jmsTemplate" ref="jmsTemplate"/> 
+	</bean>
+
+
+</beans>        

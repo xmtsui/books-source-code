@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/spice-jndikit-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/openjms-net-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="lib/openjms-common-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="lib/openjms-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="lib/jms-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/concurrent-1.3.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/spring.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/CL3Export.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/com.ibm.mq.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/com.ibm.mqjms.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/connector.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/dhbcore.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/commonservices.jar"/>
+	<classpathentry kind="lib" path="/mq6/lib/rmm.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

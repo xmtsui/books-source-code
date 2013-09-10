@@ -13,6 +13,11 @@ public class PairTest3
       Pair<Manager> buddies = new Pair<Manager>(ceo, cfo);      
       printBuddies(buddies);
 
+      Employee e1 = new Employee("tsui", 800000, 2003, 12, 15);
+      Employee e2 = new Employee("wendy", 800000, 2003, 12, 15);
+      Pair<Employee> es = new Pair<Employee>(e1, e2);
+      printBuddies(es);
+
       ceo.setBonus(1000000);
       cfo.setBonus(500000);
       Manager[] managers = { ceo, cfo };
@@ -38,6 +43,7 @@ public class PairTest3
       if (a == null || a.length == 0) return;
       Manager min = a[0];
       Manager max = a[0];
+      // Employee min = a[0];//不能使用Employee
       for (int i = 1; i < a.length; i++)
       {
          if (min.getBonus() > a[i].getBonus()) min = a[i];

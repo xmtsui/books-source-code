@@ -1,0 +1,368 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 微软雅黑;
+	font-size: 14px;
+}
+a{
+	text-decoration: none;
+}
+a img{
+	border: none;
+}
+li{
+	list-style: none;
+}
+.topp{
+	height: 18px;
+	margin: 25px 0 10px 0;       /*********  modify colorbag's margin-top at the same time ********/
+}
+.header .theme, .hnav, .category, .newarr1, .newarr2, .freeevent, .event, .event1, .event2, .colorbag{
+	float: left;
+	display: inline;
+}
+.hlink, .visual, .freeevent .pnote, .newarr, .bp, .plist{
+	float: right;
+	display: inline;
+}
+.freeevent, .event{
+	width: 224px;
+}
+ .event1, .event2, .colorbag{
+	 width: 222px;
+ }
+.visual, .newarr, .bp, .plist{
+	width: 650px;
+}
+.event, .bp{
+	height: 360px;
+}
+.header .theme, .location a, .category .uone .currentone a{
+	color: #e9421d;
+}
+.newarr2, .event1, .event2, .bp .bp2, .bp3, .colorbag, .plist table td{
+	border: 1px solid #eaeaea;
+}
+.category .uone li a, .visual p a, .visual div, .freeevent p, .newarr p, .newarr2 .newname a, .newarr2 .newprice a, .bp p, .plist p, .footer p{
+	font-size: 12px;
+}
+.newarr2, .event1 a, .bp a, .colorbag, .plist table td{
+	text-align: center;
+}
+/*************  forward is for the whole page  ****************/
+.wrap{
+	width: 900px;
+	margin: 35px auto;
+}
+.header .theme{
+	font-size: 18px;
+}
+.hnav{
+	margin-left: 36px;
+}
+.hnav a{
+	color: #000;
+	margin-right: 28px;
+	font-size: 13px;
+}
+.hlink{
+	color: #bcbcbc;
+}
+.hlink a{
+	color: #bcbcbc;
+	font-size: 10px;
+	padding-right: 10px;
+	background: url(images/hlink.jpg) no-repeat right center;
+}
+.hlink .last{
+	background: none;
+	padding: 0;
+}
+/********************  location   ************************/
+.location{
+	text-align: right;
+	font-size: 11px;
+	color: #6b6b6b;
+	margin: 25px 0 5px 0;
+}
+/*********************   category    ********************************/
+.category{
+	width: 196px;
+	padding-left: 20px;
+	border: 4px solid #e9421d;
+	height: 322px;
+}
+.category p{
+	font-size: 22px;
+	font-weight: bold;
+	color: #373434;
+	margin: 20px 0 18px 0;
+}
+.category .uone li a{
+	color: #545454;
+	margin-top: 6px;
+	padding-left: 12px;
+	background: url(images/uone.jpg) no-repeat left center;
+}
+.category .currentone .utwo{
+	margin: 10px 0;
+}
+.category .utwo li{
+	width: 170px;
+	padding: 2px 0;
+	border-top: 1px solid #eaeaea;
+	text-align: right;
+}
+.category .currentone .utwo li a{
+	color: #a3a3a3;
+	margin-right: 5px;
+	background: none;
+}
+.category .currentone .utwo .last{
+	border-bottom: 1px solid #eaeaea;
+}
+/*********** visual*************/
+.visual{
+	height: 329px;
+	border-bottom: 1px solid #eaeaea;
+	background: url(images/visual.jpg) no-repeat right top;
+}
+.visual p{
+	margin: 180px 0 0 5px;
+	color: #eaeaea;
+}
+.visual p a{
+	color: #eaeaea;
+	font-weight: bold;
+	padding: 0 5px;
+}
+.visual div{
+	margin: 50px 0 0 10px;
+	width: 335px;
+	color: #b8b8b8;
+}
+/*************** free event   *******************/
+.freeevent p{
+	color: #505050;
+	position: relative;
+}
+.freeevent p a{
+	font-size: 8px;
+	color: #3d3d3d;
+	position: absolute;
+	right: 0;
+	top: 4px;
+}
+.freeevent ul{
+	float: left;
+	border-bottom: 1px solid #eaeaea;
+}
+.freeevent li{
+	float: left;
+	display: inline;
+	width: 100%;
+	height: 69px;
+	border-top: 1px solid #eaeaea;
+}
+.freeevent .pshow{
+	float: left;
+	display: inline-block;
+	height: 69px;
+	width: 70px;
+	position: relative;
+}
+.freeevent .pshow img{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.freeevent .pnote{
+	width: 140px;
+	margin-top: 5px;
+}
+.freeevent .pnote p{
+	text-align: right;
+	overflow: hidden;
+	color: #717171;
+}
+.freeevent .pnote .pone, .freeevent .pnote .ptwo, .freeevent .pnote .pthree{
+	font-size: 18px;
+}
+.freeevent .pnote .pone a, .freeevent .pnote .ptwo a, .freeevent .pnote .pthree a{
+	font-size: 18px;
+	margin-left: 5px;
+}
+.freeevent .pnote .pone a{
+	color: #ec7e21;
+}
+.freeevent .pnote .ptwo a{
+	color: #34b3a6;
+}
+.freeevent .pnote .pthree a{
+	color: #518cb2;
+}
+.freeevent .pnote a{
+	position: static;
+}
+/************ new arrivals   *******************/
+.newarr p{
+	color: #505050;
+	position: relative;
+}
+.newarr p a{
+	font-size: 10px;
+	color: #3d3d3d;
+	position: absolute;
+	right: 0;
+	top: 4px;
+}
+.newarr1{
+	width: 158px;
+	height: 203px;
+	border: 4px solid #eaeaea;
+	position: relative;
+}
+.newarr1 a img{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.newarr2{
+	width: 160px;
+	height: 195px;
+	padding-top: 14px;
+	border-left: none;
+}
+.newarr2 p, .newarr2 p a{
+	position: static;
+	color: #a3a3a3;
+	font-size: 11px;
+}
+.newarr2 .newname a{
+	color: #474747;
+}
+.newarr2 .newprice a{
+	color: #f46024;
+}
+/************* event  *****************/
+.event{
+	height: expression( this.scrollHeight > 360? "360px" : "auto" );
+}
+.event1{
+	height: 145px;
+	padding-top: 67px;
+	background: url(images/event2.jpg) no-repeat center bottom;
+}
+.event1 p, .event2 p{
+	font-size: 10px;
+	color: #ebebeb;
+	padding-left: 15px;
+	overflow: hidden;
+}
+.event1 a{
+	display: block;
+	width: 72px;
+	height: 19px;
+	margin: 50px 0 0 20px;
+	padding-top: 3px;
+	font-size: 10px;
+	color: #fff;
+	background: url(images/eventbutton.jpg) no-repeat center;
+}
+.event2{
+	clear: left;
+	height: 40px;
+	padding-top: 46px;
+	margin-top: 5px;
+	background: url(images/event3.jpg) no-repeat right bottom;
+}
+.event2 p{
+	padding-left: 22px;
+}
+/**************** best production ************************/
+.bp p{
+	color: #505050;
+}
+.bp a{
+	display: block;
+	float: left;
+	display: inline;
+	padding-top: 13px;
+}
+.bp .bp1{
+	width: 154px;
+	height: 133px;
+	border: 4px solid #eaeaea;
+}
+.bp .bp2, .bp3{
+	width: 160px;
+	height: 139px;
+	border-left: none;
+}
+.bp .bp3{
+	border-top: none;
+}
+.bp .bp4{
+	border-left: 1px solid #eaeaea;
+}
+/*********** color bag  *******************/
+.colorbag{
+	clear: left;
+	height: 158px;
+	margin-top: 52px;
+	_margin-top: 42px;
+	padding: 12px 0;
+}
+/************** product list  ********************/
+.plist p{
+	color: #505050;
+	position: relative;
+}
+.plist p a{
+	font-size: 10px;
+	color: #3d3d3d;
+	position: absolute;
+	right: 0;
+	top: 4px;
+}
+.plist table{
+	border-collapse: collapse;
+}
+.plist table td{
+	width: 129px;
+	height: 182px;
+}
+/**********  footer ***************/
+.footer{
+	clear: both;
+	padding-top: 60px;
+}
+.footer li{
+	float: left;
+}
+.footer a{
+	color: #898580;
+	font-size: 14px;
+	padding: 15px;
+	background: url(images/footerbar.jpg) no-repeat center right;
+}
+.footer ul{
+	margin-left: -15px;
+}
+.footer p{
+	clear: both;
+	color: #c6c6c6;
+	padding-top: 10px;
+}
+.footer .last a{
+	background: none;
+}
+/********  clear ********/
+.clear{
+	clear: both;
+}

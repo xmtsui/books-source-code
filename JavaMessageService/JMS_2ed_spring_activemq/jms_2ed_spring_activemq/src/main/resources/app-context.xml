@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans spring-beans-2.0.xsd
+       http://www.springframework.org/schema/aop spring-aop-2.0.xsd
+	   http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-2.5.xsd">
+
+<!--	<bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate"> -->
+<!--       <property name="environment"> -->
+<!--          <props> -->
+<!--             <prop key="java.naming.factory.initial">-->
+<!--                   org.exolab.jms.jndi.InitialContextFactory</prop> -->
+<!--             <prop key="java.naming.provider.url">tcp://10.37.129.2:3035</prop> -->
+<!--             <prop key="java.naming.security.principal">admin</prop> -->
+<!--             <prop key="java.naming.security.credentials">openjms</prop> -->
+<!--          </props> -->
+<!--       </property> -->
+<!--    </bean> -->
+
+	<bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate"> 
+       <property name="environment"> 
+          <props> 
+             <prop key="java.naming.factory.initial">
+                   org.apache.activemq.jndi.ActiveMQInitialContextFactory</prop> 
+             <prop key="java.naming.provider.url">tcp://localhost:61616</prop> 
+             <prop key="java.naming.security.principal">system</prop> 
+             <prop key="java.naming.security.credentials">manager</prop> 
+          </props> 
+       </property> 
+    </bean> 
+
+	<bean id="jndiQueueConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+       <property name="jndiTemplate" ref="jndiTemplate"/> 
+       <property name="jndiName" value="QueueCF"/> 
+    </bean> 
+
+<!--	<bean id="queueConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory"> -->
+<!--	   <property name="targetConnectionFactory" ref="jndiQueueConnectionFactory"/> -->
+<!--	</bean>        -->
+
+    <bean id="queueConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory"> 
+        <property name="targetConnectionFactory" ref="jndiQueueConnectionFactory"/> 
+        <property name="sessionCacheSize" value="1"/> 
+    </bean>        
+
+
+<bean id="queueDestination"
+   class="org.springframework.jndi.JndiObjectFactoryBean">
+   <property name="jndiTemplate" ref="jndiTemplate"/>
+   <property name="jndiName" value="queue1"/>
+</bean>
+
+	<bean id="destinationResolver" class="org.springframework.jms.support.destination.JndiDestinationResolver"> 
+	   <property name="jndiTemplate" ref="jndiTemplate"/> 
+	   <property name="cache" value="true"/> 
+	   <property name="fallbackToDynamicDestination" value="false"/> 
+	</bean> 
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate"> 
+	   <property name="connectionFactory" ref="queueConnectionFactory"/> 
+	   <property name="destinationResolver" ref="destinationResolver"/> 
+	   <property name="defaultDestinationName" value="queue1"/> 
+	   <property name="pubSubDomain" value="false"/> 
+	</bean> 
+	
+	<bean id="jmsSender" class="com.jms.client.JMSSender">
+	   <property name="jmsTemplate" ref="jmsTemplate"/> 
+	   <property name="queueName" value="queue1"/> 
+	</bean>
+
+	<bean id="jmsSenderConvert" class="com.jms.client.JMSSenderConvert">
+	   <property name="jmsTemplate" ref="jmsTemplate"/> 
+	   <property name="queueName" value="queue1"/> 
+	   <property name="queueDest" ref="queueDestination"/> 
+	</bean>
+
+	<bean id="jmsSenderReply" class="com.jms.client.JMSSenderReply">
+	   <property name="jmsTemplate" ref="jmsTemplate"/> 
+	   <property name="requestQ" value="request"/> 
+	   <property name="replyQ" value="response"/> 
+	</bean>
+
+	<bean id="messageListener1" class="com.jms.server.JMSReceiverAsync1" />
+	<bean id="messageListener2" class="com.jms.server.JMSReceiverAsync2"/>
+
+<!--    Alternative to the jms namespace -->
+<!--	<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">-->
+<!--       <property name="connectionFactory" ref="queueConnectionFactory"/>-->
+<!--	   <property name="destinationResolver" ref="destinationResolver"/> -->
+<!--       <property name="destinationName" value="queue1"/>-->
+<!--       <property name="messageListener" ref="messageListener1" />-->
+<!--    </bean>-->
+
+	<jms:listener-container connection-factory="queueConnectionFactory"
+                            destination-resolver="destinationResolver">
+<!--       <jms:listener destination="request" ref="messageListener2"/>-->
+       <jms:listener destination="queue1" ref="messageListener1"/>
+	</jms:listener-container>
+
+
+	<bean id="messageListener3" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+       <constructor-arg>
+          <bean class="com.jms.server.JMSReceiverPOJO"/>
+       </constructor-arg>
+<!--       <property name="defaultListenerMethod" value="processRequest"/>-->
+<!--       <property name="messageConverter"><null/></property>-->
+    </bean>
+
+
+    <bean id="messageConverter" class="org.springframework.jms.support.converter.SimpleMessageConverter"/>
+
+	<bean id="messageListener4" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+       <constructor-arg>
+          <bean class="com.jms.server.JMSReceiverPOJO"/>
+       </constructor-arg>
+       <property name="defaultListenerMethod" value="receiveMap"/>
+       <property name="messageConverter" ref="messageConverter"/>
+    </bean>
+
+	<bean id="messageListener5" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+       <constructor-arg>
+          <bean class="com.jms.server.JMSReceiverPOJO"/>
+       </constructor-arg>
+       <property name="defaultListenerMethod" value="receiveString"/>
+       <property name="messageConverter" ref="messageConverter"/>
+    </bean>
+
+</beans>        

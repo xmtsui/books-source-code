@@ -12,6 +12,7 @@ books src
 [<\<深入理解Java虚拟机：JVM高级特性与最佳实践（第2版）>>](http://www.hzbook.com/Books/7049.html)  
 [<\<"Java Software Structures: Designing And Using Data Structures, 2/e">>](http://cssupport.pearsoncmg.com/book.php?author_id=108) 中文版：《数据结构(java版)》  
 [<\<MySQL Crash Course>>](http://forta.com/books/0672327120/)中文版：《Mysql必知必会》  
+[<\<Java Message Service>>](http://examples.oreilly.com/9780596522056/)中文版：《Java 消息服务》  
 articles src
 ---
 [IBM Developworks "深入探讨 Java 类加载器"](http://www.ibm.com/developerworks/cn/java/j-lo-classloader/index.html#download)

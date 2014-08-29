@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="Cp1252"?>
+  <jboss>
+    <secure>false</secure>
+    <container-configurations />
+    <resource-managers />
+
+    <enterprise-beans>
+
+      <entity>
+        <ejb-name>UserInfoBean</ejb-name>
+        <jndi-name>jmxbook/ch14/UserInfo</jndi-name>
+        <configuration-name></configuration-name>
+      </entity>
+
+      <entity>
+        <ejb-name>WorkflowBean</ejb-name>
+        <jndi-name>jmxbook/ch14/Workflow</jndi-name>
+        <configuration-name></configuration-name>
+      </entity>
+
+    </enterprise-beans>
+
+  </jboss>
+

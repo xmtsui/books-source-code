@@ -13,7 +13,7 @@ public class Chat implements javax.jms.MessageListener{
     /* Constructor used to Initialize Chat */
     public Chat(String topicFactory, String topicName, String username) 
         throws Exception {
-    	
+
     	// Obtain a JNDI connection using the jndi.properties file
         InitialContext ctx = new InitialContext();
 
@@ -37,7 +37,7 @@ public class Chat implements javax.jms.MessageListener{
         TopicPublisher publisher = 
             pubSession.createPublisher(chatTopic);
         TopicSubscriber subscriber = 
-            subSession.createSubscriber(chatTopic, null, true);
+            subSession.createSubscriber(chatTopic, null, false);
 
         // Set a JMS message listener
         subscriber.setMessageListener(this);

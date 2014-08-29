@@ -45,6 +45,8 @@ Thumbs.db
 */.settings/*
 */target/*
 *.xsd
+*.idea
+*.iml
 
 #Customerized for onlineclustering#
 ###################################
@@ -63,3 +65,4 @@ main-cloudata/cluster_conf/
 MiA/
 hadoop-book/
 backup/
+
